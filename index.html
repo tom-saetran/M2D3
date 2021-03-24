@@ -373,6 +373,9 @@
         <div class="container">
             <span>Feet feet feet</span>
             <input type="button" value="Contact Us" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <span>JS FUNCTIONS =></span>
+            <input type="button" value="JS - Make Hot" onclick="makeHot()">
+            <input type="button" value="JS - Delete Cards" onclick="deleteCards()">
         </div>
 
         <br>
@@ -419,9 +422,13 @@
 
     const deleteCards = () => {
         let cards = document.getElementsByClassName("card")
+        if (cards.length === 0)
+            return
+
         for (const card of cards) {
             card.remove()
         }
+        deleteCards()
     }
 </script>
 </body>
